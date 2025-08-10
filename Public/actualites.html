@@ -1,0 +1,305 @@
+<!-- Modèle d'article structuré avec commentaires -->
+<!DOCTYPE html> <!-- Indique au navigateur que c'est un document HTML5 -->
+<html lang="fr"> <!-- La langue principale est le français -->
+<head>
+  <!-- Métadonnées de base -->
+  <meta charset="UTF-8" /> <!-- Encodage UTF-8 pour supporter les caractères spéciaux -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- Rendre le site responsive -->
+  <title>{{TITRE ARTICLE}} – Tech & IA</title> <!-- Titre affiché dans l'onglet -->
+  <meta name="description" content="{{RESUME COURT DE L'ARTICLE (150–160 caractères)}}" /> <!-- Résumé pour moteurs de recherche -->
+
+  <!-- Balises Open Graph pour le partage sur réseaux sociaux -->
+  <meta property="og:title" content="{{TITRE ARTICLE}}" />
+  <meta property="og:description" content="{{RESUME COURT DE L'ARTICLE}}" />
+  <meta property="og:image" content="images/{{image-couverture.jpg}}" />
+  <meta property="og:type" content="article" />
+
+  <!-- Liens vers Bootstrap CSS et icônes -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <!-- Styles personnalisés -->
+  <style>
+    .article-hero{aspect-ratio:16/9;object-fit:cover;border-radius:.8rem}
+    .byline img{width:44px;height:44px;border-radius:50%;object-fit:cover}
+    .toc{background:#f8f9fa;border-radius:.8rem}
+    .toc a{ text-decoration:none }
+    .content img{max-width:100%;border-radius:.5rem}
+    .content figure{margin:1.5rem 0}
+    .content figure figcaption{font-size:.9rem;color:#6c757d}
+    .tag{margin-right:.4rem}
+    .sticky-share{position:sticky;top:6rem}
+    pre,code{background:#f6f8fa;border-radius:.4rem;padding:.2rem .4rem}
+  </style>
+</head>
+<body>
+   <header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold fs-3 text-info" href="index.html">
+        <i class="bi bi-cpu"></i> ActuTech
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Basculer la navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-center text-center" id="menu">
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="index.html"><i class="bi bi-house-door"></i> Accueil</a></li>
+          <li class="nav-item"><a class="nav-link" href="ia.html"><i class="bi bi-robot"></i> IA</a></li>
+          <li class="nav-item"><a class="nav-link" href="gadgets.html"><i class="bi bi-phone"></i> Gadgets</a></li>
+          <li class="nav-item"><a class="nav-link" href="actualites.html"><i class="bi bi-newspaper"></i> Actualités</a></li>
+          <li class="nav-item"><a class="nav-link" href="startups-innovation.html"><i class="bi bi-lightbulb"></i> Startups & Innovation</a></li>
+          <li class="nav-item"><a class="nav-link" href="emplois-formations.html"><i class="bi bi-journal-album"></i> Emplois & Formations</a></li>
+          <li class="nav-item"><a class="nav-link" href="projets-africains.html"><i class="bi bi-kanban"></i> Projets Africains</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html"><i class="bi bi-envelope"></i> Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+
+  <!-- Fil d'Ariane pour situer l'utilisateur -->
+  <div class="bg-light py-2 border-bottom">
+    <div class="container small">
+      <a href="index.html" class="text-decoration-none">Accueil</a>
+      <span class="text-muted">›</span>
+      <a href="actualites.html" class="text-decoration-none">Actualités</a>
+      <span class="text-muted">›</span>
+      <span class="text-muted">RoboVision – L’actualité vue par l’intelligence artificielle</span>
+    </div>
+  </div>
+
+  <!-- Contenu principal -->
+  <main class="container my-4">
+    <div class="row g-5">
+      <!-- Colonne principale avec l'article -->
+      <div class="col-lg-8">
+        <article class="card border-0">
+          <header class="card-body pb-0">
+            <h1 class="display-6 fw-bold">RoboVision – L’actualité vue par l’intelligence artificielle</h1>
+            <div class="d-flex align-items-center gap-3 byline mt-3">
+              <img src="images/auteur.jpg" alt="Auteur" />
+              <div>
+                <div class="fw-medium">Par <span>Axel Mobio</span></div>
+                <div class="text-muted small">
+                  <time datetime="2025-08-08">08 août 2025</time>
+                  • <span id="readingTime">3 min de lecture</span>
+                  • <span class="badge bg-primary">IA</span>
+                </div>
+              </div>
+            </div>
+          </header>
+
+          <!-- Image de couverture -->
+          <figure class="m-0 p-3 pt-4">
+            <img class="w-100 article-hero" src="images/image4.jpg" alt="{{légende image}}" />
+            <figcaption class="small text-muted mt-2">Une main robotique interagit avec une interface holographique futuriste.</figcaption>
+          </figure>
+
+          <!-- Corps de l'article -->
+          <div class="card-body pt-0 content">
+            <p class="lead">
+              L’intelligence artificielle façonne déjà le monde de demain, des robots capables 
+              d’interagir avec des données complexes aux innovations qui transforment nos vies. Cette illustration 
+              met en lumière la fusion entre technologie avancée et créativité humaine, ouvrant la voie à une nouvelle ère numérique.
+            </p>
+
+            <!-- Sommaire généré automatiquement -->
+            <aside class="toc p-3 mb-4">
+              <div class="fw-semibold mb-2"><i class="bi bi-list-ul me-1"></i>Sommaire</div>
+              <nav id="tocList" class="d-grid gap-1"></nav>
+            </aside>
+
+            <!-- Sections de contenu -->
+            <h2>1. Contexte</h2>
+            <p>
+              Cette image illustre l’avancée fulgurante de l’intelligence artificielle et de la robotique dans notre quotidien. 
+              La main robotique, pointant vers une interface holographique, symbolise l’interaction directe entre la machine et 
+              les données numériques. Elle représente la convergence entre innovation, automatisation et connectivité, des thèmes 
+              centraux dans l’évolution des technologies modernes.
+            </p>
+
+            <h2>2. Ce qu'il faut retenir</h2>
+            <ul>
+              <li>L’IA révolutionne la robotique et automatise des tâches autrefois réservées à l’homme.</li>
+              <li>Les interfaces holographiques permettent une interaction plus intuitive avec les données.</li>
+              <li>La convergence entre machine et intelligence humaine ouvre la voie à de nouvelles innovations.</li>
+            </ul>
+
+            <h2>3. Détails et analyses</h2>
+            <p>
+              Ces dernières années, les progrès en intelligence artificielle et en 
+              robotique ont franchi des étapes majeures. Des robots dotés de capacités 
+              d’analyse en temps réel sont désormais capables d’interagir avec des environnements 
+              numériques complexes grâce à des interfaces avancées, comme les hologrammes. Cette technologie, 
+              autrefois réservée aux laboratoires et aux films de science-fiction, trouve aujourd’hui des 
+              applications concrètes dans la médecine, l’industrie et même l’éducation. L’image illustre 
+              cette transition vers un futur où la collaboration entre l’homme et la machine deviendra la norme.
+            </p>
+            <figure>
+              <img src="images/{{image-secondaire.jpg}}" alt="{{description visuelle}}" />
+              <figcaption>Illustration : {{commentaire court}}</figcaption>
+            </figure>
+
+            <h2>4. Impacts pour les utilisateurs/entreprises</h2>
+            <p>
+              L’intégration de l’IA et des interfaces holographiques pourrait révolutionner le travail dans de nombreux secteurs. 
+              En médecine, elle permettrait aux chirurgiens de visualiser en 3D les organes d’un patient avant une opération. 
+              Dans l’industrie, les techniciens pourraient interagir avec des plans ou des données en temps réel sans écran physique. 
+              Pour le grand public, ces avancées ouvrent la porte à des expériences immersives dans l’éducation, le divertissement ou 
+              encore la communication.
+            </p>
+
+            <h2>5. Conclusion</h2>
+            <p>
+              L’essor de l’intelligence artificielle et des interfaces holographiques ouvre une nouvelle ère où l’homme et la machine 
+              collaborent plus étroitement que jamais. Ces technologies, autrefois réservées à la science-fiction, trouvent aujourd’hui 
+              des applications concrètes dans la santé, l’industrie, l’éducation et bien plus encore.
+              Ne restez pas spectateur de cette révolution : abonnez-vous à notre page d’actualité pour découvrir, chaque jour, 
+              les innovations qui façonnent le monde de demain.
+
+            </p>
+
+            <!-- Tags -->
+            <div class="mt-4">
+              <span class="badge bg-secondary tag">#IA</span>
+              <span class="badge bg-secondary tag">#Afrique</span>
+              <span class="badge bg-secondary tag">#Startups</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Liens précédent / suivant -->
+        <div class="d-flex justify-content-between mt-4">
+          <a href="{{article-precendent.html}}" class="btn btn-outline-secondary"><i class="bi bi-arrow-left"></i> Article précédent</a>
+          <a href="{{article-suivant.html}}" class="btn btn-primary">Article suivant <i class="bi bi-arrow-right"></i></a>
+        </div>
+
+        <!-- Section articles liés -->
+        <section class="mt-5">
+          <h3 class="mb-3">Articles liés</h3>
+          <div class="row g-4">
+            <!-- Chaque bloc est une carte d'article lié -->
+            <div class="col-md-4">
+              <a href="article2.html" class="text-decoration-none">
+                <div class="card h-100 shadow-sm">
+                  <img src="images/image2.jpg" class="card-img-top" alt="…" />
+                  <div class="card-body">
+                    <h6 class="card-title">{{Titre lié #1}}</h6>
+                    <p class="card-text small text-muted">{{Petit résumé}}</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-4">
+              <a href="article3.html" class="text-decoration-none">
+                <div class="card h-100 shadow-sm">
+                  <img src="images/image3.jpg" class="card-img-top" alt="…" />
+                  <div class="card-body">
+                    <h6 class="card-title">{{Titre lié #2}}</h6>
+                    <p class="card-text small text-muted">{{Petit résumé}}</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-4">
+              <a href="article4.html" class="text-decoration-none">
+                <div class="card h-100 shadow-sm">
+                  <img src="images/image1.png" class="card-img-top" alt="…" />
+                  <div class="card-body">
+                    <h6 class="card-title">{{Titre lié #3}}</h6>
+                    <p class="card-text small text-muted">{{Petit résumé}}</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Zone de commentaires -->
+        <section class="mt-5">
+          <h3>Commentaires</h3>
+          <div class="alert alert-secondary">La zone de commentaires sera intégrée plus tard.</div>
+        </section>
+      </div>
+
+      <!-- Colonne latérale -->
+      <aside class="col-lg-4">
+        <div class="sticky-share">
+          <!-- Bloc partage -->
+          <div class="card mb-4">
+            <div class="card-body">
+              <div class="fw-semibold mb-2">Partager</div>
+              <div class="d-flex gap-2">
+                <a class="btn btn-outline-primary btn-sm" href="#"><i class="bi bi-facebook"></i></a>
+                <a class="btn btn-outline-primary btn-sm" href="#"><i class="bi bi-twitter-x"></i></a>
+                <a class="btn btn-outline-primary btn-sm" href="#"><i class="bi bi-whatsapp"></i></a>
+                <a class="btn btn-outline-primary btn-sm" href="#"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bloc auteur -->
+          <div class="card mb-4">
+            <div class="card-body d-flex gap-3 align-items-center">
+              <img src="images/auteur.jp"  alt="Auteur"/>
+              <div>
+                <div class="fw-semibold">Axel Mobio</div>
+                <div class="text-muted small">Rédacteur Tech & IA</div>
+                <a href="#" class="small">Voir ses articles</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bloc newsletter -->
+          <div class="card">
+            <div class="card-body">
+              <div class="fw-semibold mb-2">Recevoir les actus par email</div>
+              <form>
+                <input type="email" class="form-control mb-2" placeholder="Votre email" />
+                <button type="button" class="btn btn-primary w-100">S'abonner</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Pied de page -->
+  <footer class="bg-dark text-white text-center p-3 mt-5">© 2025 Tech & IA</footer>
+
+  <!-- Scripts Bootstrap + JS personnalisé -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Calcul du temps de lecture (~200 mots/min)
+    (function(){
+      const text = document.querySelector('.content')?.innerText || '';
+      const words = text.trim().split(/\s+/).length;
+      const minutes = Math.max(1, Math.round(words/200));
+      const el = document.getElementById('readingTime');
+      if(el) el.textContent = `~${minutes} min de lecture`;
+    })();
+
+    // Génération de la table des matières à partir des titres H2
+    (function(){
+      const container = document.getElementById('tocList');
+      if(!container) return;
+      const headers = document.querySelectorAll('.content h2');
+      headers.forEach((h, i)=>{
+        const id = h.id || `section-${i+1}`;
+        h.id = id;
+        const a = document.createElement('a');
+        a.className = 'small py-1';
+        a.href = `#${id}`;
+        a.textContent = h.textContent;
+        container.appendChild(a);
+      });
+    })();
+  </script>
+</body>
+</html>
