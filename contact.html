@@ -1,0 +1,108 @@
+<!-- Modèle d'article structuré avec commentaires -->
+<!DOCTYPE html> <!-- Indique au navigateur que c'est un document HTML5 -->
+<html lang="fr"> <!-- La langue principale est le français -->
+<head>
+  <!-- Métadonnées de base -->
+  <meta charset="UTF-8" /> <!-- Encodage UTF-8 pour supporter les caractères spéciaux -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- Rendre le site responsive -->
+  <title>{{TITRE ARTICLE}} – Tech & IA</title> <!-- Titre affiché dans l'onglet -->
+  <meta name="description" content="{{RESUME COURT DE L'ARTICLE (150–160 caractères)}}" /> <!-- Résumé pour moteurs de recherche -->
+
+  <!-- Balises Open Graph pour le partage sur réseaux sociaux -->
+  <meta property="og:title" content="{{TITRE ARTICLE}}" />
+  <meta property="og:description" content="{{RESUME COURT DE L'ARTICLE}}" />
+  <meta property="og:image" content="images/{{image-couverture.jpg}}" />
+  <meta property="og:type" content="article" />
+
+  <!-- Liens vers Bootstrap CSS et icônes -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <!-- Styles personnalisés -->
+  <style>
+    .article-hero{aspect-ratio:16/9;object-fit:cover;border-radius:.8rem}
+    .byline img{width:44px;height:44px;border-radius:50%;object-fit:cover}
+    .toc{background:#f8f9fa;border-radius:.8rem}
+    .toc a{ text-decoration:none }
+    .content img{max-width:100%;border-radius:.5rem}
+    .content figure{margin:1.5rem 0}
+    .content figure figcaption{font-size:.9rem;color:#6c757d}
+    .tag{margin-right:.4rem}
+    .sticky-share{position:sticky;top:6rem}
+    pre,code{background:#f6f8fa;border-radius:.4rem;padding:.2rem .4rem}
+  </style>
+</head>
+<body>
+   <header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold fs-3 text-info" href="index.html">
+        <i class="bi bi-cpu"></i> ActuTech
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Basculer la navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-center text-center" id="menu">
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="index.html"><i class="bi bi-house-door"></i> Accueil</a></li>
+          <li class="nav-item"><a class="nav-link" href="ia.html"><i class="bi bi-robot"></i> IA</a></li>
+          <li class="nav-item"><a class="nav-link" href="gadgets.html"><i class="bi bi-phone"></i> Gadgets</a></li>
+          <li class="nav-item"><a class="nav-link" href="actualites.html"><i class="bi bi-newspaper"></i> Actualités</a></li>
+          <li class="nav-item"><a class="nav-link" href="startups-innovation.html"><i class="bi bi-lightbulb"></i> Startups & Innovation</a></li>
+          <li class="nav-item"><a class="nav-link" href="emplois-formations.html"><i class="bi bi-journal-album"></i> Emplois & Formations</a></li>
+          <li class="nav-item"><a class="nav-link" href="projets-africains.html"><i class="bi bi-kanban"></i> Projets Africains</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html"><i class="bi bi-envelope"></i> Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+  <main class="container my-5">
+    <h2 class="text-primary">Contactez-nous</h2>
+<form class="bg-white p-4 rounded shadow" action="#" method="post">
+  <div class="mb-3">
+    <label for="nom" class="form-label">Nom</label>
+    <input type="text" id="nom" name="nom" class="form-control" required>
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input type="email" id="email" name="email" class="form-control" required>
+  </div>
+  <div class="mb-3">
+    <label for="message" class="form-label">Message</label>
+    <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Envoyer</button>
+</form>
+
+  </main>
+
+  <footer class="bg-dark text-white text-center p-3">
+    &copy; 2025 ActuTech - Tous droits réservés
+  </footer>
+</body>
+
+<script> // Ce script me permet de rendre cette page active
+  // Obtenir le nom de la page actuelle (ex: "index.html")
+  const currentPage = window.location.pathname.split("/").pop();
+
+  // Récupère tous les liens dans le menu
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  navLinks.forEach(link => {
+    const linkPage = link.getAttribute('href');
+    if (linkPage === currentPage) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+</script>
+
+</html>
+
+
